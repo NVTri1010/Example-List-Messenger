@@ -43,6 +43,43 @@ class UserItemWidget extends StatelessWidget {
                               value: data.hasStory == true ? 1 : 0,
                             ),
                           ),
+                          Positioned.fill(
+                            child: Align(
+                              alignment: Alignment.bottomRight,
+                              child: FractionallySizedBox(
+                                heightFactor: 0.5,
+                                widthFactor: 0.5,
+                                child: Stack(children: [
+                                  Container(
+                                    color: Colors.yellow,
+                                  ),
+                                  Align(
+                                    alignment: Alignment.centerRight,
+                                    child: FractionallySizedBox(
+                                        heightFactor: 0.5,
+                                        widthFactor: 0.5,
+                                        child: Container(
+                                          color: Colors.red,
+                                        )
+                                        // child: Material(
+                                        //   clipBehavior: Clip.hardEdge,
+                                        //   type: MaterialType.circle,
+                                        //   color: Colors.white,
+                                        //   child: Padding(
+                                        //     padding: const EdgeInsets.all(2.0),
+                                        //     child: Material(
+                                        //       clipBehavior: Clip.hardEdge,
+                                        //       type: MaterialType.circle,
+                                        //       color: Colors.green,
+                                        //     ),
+                                        //   ),
+                                        // ),
+                                        ),
+                                  ),
+                                ]),
+                              ),
+                            ),
+                          )
                         ],
                       ),
                     ),

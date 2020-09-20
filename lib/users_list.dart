@@ -29,7 +29,7 @@ class UserItemWidget extends StatelessWidget {
           Text(
             data.name,
             overflow: TextOverflow.ellipsis,
-            maxLines: 5,
+            maxLines: 2,
           )
         ],
       ),

@@ -14,7 +14,7 @@ List<UserModel> mockUsers = [
     id: tmpId++,
     img: mockImages[tmpId % mockImages.length],
     active: true,
-    name: 'Person 1',
+    name: 'Person with very long name',
     hasStory: true,
   ),
   UserModel(

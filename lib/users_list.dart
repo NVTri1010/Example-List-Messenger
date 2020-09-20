@@ -8,23 +8,31 @@ class UserItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Expanded(
-          child: AspectRatio(
-            aspectRatio: 1,
-            child: Material(
-              clipBehavior: Clip.hardEdge,
-              type: MaterialType.circle,
-              color: Colors.transparent,
-              child: Ink.image(
-                fit: BoxFit.cover,
-                image: NetworkImage(data.img),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        children: [
+          Expanded(
+            child: AspectRatio(
+              aspectRatio: 1,
+              child: Material(
+                clipBehavior: Clip.hardEdge,
+                type: MaterialType.circle,
+                color: Colors.transparent,
+                child: Ink.image(
+                  fit: BoxFit.cover,
+                  image: NetworkImage(data.img),
+                ),
               ),
             ),
           ),
-        )
-      ],
+          Text(
+            data.name,
+            overflow: TextOverflow.ellipsis,
+            maxLines: 5,
+          )
+        ],
+      ),
     );
   }
 }

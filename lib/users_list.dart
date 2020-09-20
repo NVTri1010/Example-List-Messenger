@@ -21,17 +21,29 @@ class UserItemWidget extends StatelessWidget {
                 Column(
                   children: [
                     Expanded(
-                      child: AspectRatio(
-                        aspectRatio: 1,
-                        child: Material(
-                          clipBehavior: Clip.hardEdge,
-                          type: MaterialType.circle,
-                          color: Colors.transparent,
-                          child: Ink.image(
-                            fit: BoxFit.cover,
-                            image: NetworkImage(data.img),
+                      child: Stack(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: AspectRatio(
+                              aspectRatio: 1,
+                              child: Material(
+                                clipBehavior: Clip.hardEdge,
+                                type: MaterialType.circle,
+                                color: Colors.transparent,
+                                child: Ink.image(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage(data.img),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
+                          Positioned.fill(
+                            child: CircularProgressIndicator(
+                              value: data.hasStory == true ? 1 : 0,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     SizedBox(height: marginAvatarName), // work like margin

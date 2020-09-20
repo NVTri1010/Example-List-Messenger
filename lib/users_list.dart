@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'user_model.dart';
 
+double marginAvatarName = 4;
+double nameMaxHeight = 35;
+
 class UserItemWidget extends StatelessWidget {
   final UserModel data;
 
@@ -15,25 +18,37 @@ class UserItemWidget extends StatelessWidget {
           Expanded(
             child: Stack(
               children: [
-                AspectRatio(
-                  aspectRatio: 1,
-                  child: Material(
-                    clipBehavior: Clip.hardEdge,
-                    type: MaterialType.circle,
-                    color: Colors.transparent,
-                    child: Ink.image(
-                      fit: BoxFit.cover,
-                      image: NetworkImage(data.img),
+                Column(
+                  children: [
+                    Expanded(
+                      child: AspectRatio(
+                        aspectRatio: 1,
+                        child: Material(
+                          clipBehavior: Clip.hardEdge,
+                          type: MaterialType.circle,
+                          color: Colors.transparent,
+                          child: Ink.image(
+                            fit: BoxFit.cover,
+                            image: NetworkImage(data.img),
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
+                    SizedBox(height: marginAvatarName), // work like margin
+                    SizedBox(height: nameMaxHeight),
+                  ],
                 ),
                 Positioned.fill(
                   child: Align(
                     alignment: Alignment.bottomCenter,
-                    child: Text(
-                      data.name,
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 2,
+                    child: SizedBox(
+                      height: nameMaxHeight,
+                      child: Text(
+                        data.name,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.center,
+                        maxLines: 2,
+                      ),
                     ),
                   ),
                 ),

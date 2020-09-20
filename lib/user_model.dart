@@ -1,14 +1,15 @@
-class UserModel extends Object {
+class UserModel {
   int id;
   String img;
   String name;
   bool active;
   bool hasStory;
 
-  UserModel(
-      {this.id,
-      this.img,
-      this.name,
-      this.active = false,
-      this.hasStory = false});
+  UserModel({
+    this.id,
+    this.img,
+    this.name,
+    this.active = false,
+    this.hasStory = false,
+  });
 }

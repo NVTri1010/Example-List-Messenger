@@ -40,10 +40,10 @@ class UserItemWidget extends StatelessWidget {
                           ),
                           Positioned.fill(
                             child: CircularProgressIndicator(
-                              value: data.hasStory == true ? 1 : 0,
+                              value: data.hasStory ? 1 : 0,
                             ),
                           ),
-                          if (data.active == true)
+                          if (data.active)
                             Positioned.fill(
                               child: Align(
                                 alignment: Alignment.bottomRight,
